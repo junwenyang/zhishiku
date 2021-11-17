@@ -24,9 +24,7 @@ security = Security(app, user_datastore,login_form=LoginForm)
 security.login_manager.login_message_category = 'danger'
 security.login_manager.login_message = '请登录'
 
-###########################
-# init logging
-###########################
+# 初始化日志
 if (os.path.exists(config.LOG_CFG_FILE)):
     with open(config.LOG_CFG_FILE, 'r') as f:
         cfg = json.load(f)

@@ -61,7 +61,7 @@ def before_request():
 
 @app.errorhandler(exceptions.ArgsErrorException)
 def argsErrorHandle(e):
-    if request.is_xhr:
+    if request.headers.get("X-Requested-With") == "XMLHttpRequest":
         return jsonify({'status':'fail','msg':e.msg})
     flash(e.msg,'danger')
     return render_template('hintInfo.html')
