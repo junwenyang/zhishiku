@@ -14,9 +14,9 @@ from celery.bin import beat
 from app import config
 from multiprocessing import Process
 
-migrate=Migrate(app,db)
+migrate=Migrate(app,db) #绑定 数据库与app，建立关系
 manager=Manager(app)
-manager.add_command('db',MigrateCommand)
+manager.add_command('db',MigrateCommand) #添加迁移命令集 到脚本命令
 
 @manager.command
 def create_db():

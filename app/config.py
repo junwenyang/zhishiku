@@ -1,7 +1,6 @@
 import os
 import sys
 from celery import Celery
-# append xbysite package to python path
 from celery.schedules import crontab
 from datetime import datetime,timedelta
 
@@ -53,7 +52,7 @@ MAIL_USE_SSL = True
 #MAIL_USE_TLS = True
 MAIL_USERNAME = '1158088593@qq.com'
 MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD', '') 
-MAIL_DEFAULT_SENDER = '1158088593<1158088593@q.com>'
+MAIL_DEFAULT_SENDER = '1158088593<1158088593@qq.com>'
 
 ###########################
 # SQLAchemy config
@@ -61,7 +60,7 @@ MAIL_DEFAULT_SENDER = '1158088593<1158088593@q.com>'
 # deprecated SQLALCHEMY_COMMIT_ON_TEARDOWN=True
 # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
 SQLALCHEMY_DATABASE_URI = r'sqlite:///D:\\work\\pyprj\\mdwiki-py\\data\\app.db'
-# SQLALCHEMY_DATABASE_URI='mysql://root:1234@localhost/xbysite'
+# SQLALCHEMY_DATABASE_URI='mysql://root:1234@localhost/'
 SQLALCHEMY_ECHO = True if DEBUG else False
 SQLALCHEMY_TRACK_MODIFICATIONS = True if DEBUG else False
 # SQLALCHEMY_POOL_SIZE=10

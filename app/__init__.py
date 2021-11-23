@@ -30,7 +30,7 @@ if (os.path.exists(config.LOG_CFG_FILE)):
         cfg = json.load(f)
         logging.config.dictConfig(cfg)
         mail_handler = SMTPHandler((config.MAIL_SERVER, config.MAIL_PORT), config.MAIL_DEFAULT_SENDER,
-                                   config.LOG_MAIL_RECIEVER, "xbysite程序出现严重错误，请及时修复",
+                                   config.LOG_MAIL_RECIEVER, "程序出现严重错误，请及时修复",
                                    (config.MAIL_USERNAME, config.MAIL_PASSWORD), 'SSL')
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
