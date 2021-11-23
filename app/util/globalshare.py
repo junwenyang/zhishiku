@@ -12,7 +12,7 @@ G_SHARE = \
         { \
             'title': config.APP_NAME, \
             'menus': [ {'name': '标签', 'icon': 'tags', 'type': 0, 'link': '/pages/tag/list', 'active': ''}, \
-                      {'name': '主题', 'icon': 'tags', 'type': 0, 'link': '/sidebar/edit', 'active': ''}], \
+                      {'name': '目录', 'icon': 'tags', 'type': 0, 'link': '/sidebar/edit', 'active': ''}], \
             'sidebar': [] \
         }
 

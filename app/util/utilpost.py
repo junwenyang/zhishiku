@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import json
 import os
 from datetime import datetime
@@ -47,7 +49,6 @@ def html_clean(htmlstr):
 
 
 def get_post_content(abspath):
-
     key='post_get:%s' % abspath
 
     if redis.exists(key):
@@ -57,7 +58,7 @@ def get_post_content(abspath):
         meta=json.loads(alldict['meta'])
         redis.expire(key,60*60*1)
         return html,toc,meta
-    with open(abspath, encoding='UTF-8') as f:
+    with open(abspath, encoding='utf-8') as f:
         content = f.read()
     # title=content.split('\n\n',1)[0]
     # content=content.split('\n\n',1)[1]

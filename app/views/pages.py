@@ -37,7 +37,6 @@ def post_get(path):
         abspath=os.path.join(current_app.config['PAGE_DIR'],path)+".md"
         if not os.path.exists(abspath):
             flash("页面不存在!",'danger')
-            print('===='+abspath)
             return render_template('hintInfo.html',canCreate=True,location=path)
         else:
             # with open(abspath,encoding='UTF-8') as f:
@@ -51,6 +50,8 @@ def post_get(path):
             # toc=md.toc
             # meta=md.Meta
             html,toc,meta=utilpost.get_post_content(abspath)
+            html=html.replace('&lt;script&gt;mermaid.initialize({startOnLoad:true});&lt;/script&gt;','')
+
             log.debug('meta %s' % meta)
             post=Post.query.get(path)
             if not post:

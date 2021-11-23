@@ -11,7 +11,7 @@ md_ext = ['markdown.extensions.extra', 'markdown.extensions.abbr', 'markdown.ext
           'markdown.extensions.tables', 'markdown.extensions.admonition', 'markdown.extensions.codehilite',
           'markdown.extensions.legacy_attrs', 'markdown.extensions.legacy_em', 'markdown.extensions.meta',
           'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.smarty',
-          'markdown.extensions.toc', 'markdown.extensions.wikilinks', 'md_mermaid']
+          'markdown.extensions.toc', 'markdown.extensions.wikilinks', 'pinyin_markdown', 'md_mermaid']  #, 'md_mermaid' 不支持中文
 
 class RedisStore(object):
     G_SHARE='gshare:'
